@@ -1,0 +1,31 @@
+<template>
+    <lightning-card class="slds-m-around_medium" title="Get Random Recipes From Spoonacular" icon-name="standard:dynamic_record_choice">
+        <div style="display:flex;">
+            <!-- <div style="flex:50%; padding:2px;">
+                <lightning-input class="slds-m-around_medium" type="text" label="Search recipe here..." onchange={onchangehandler}></lightning-input>
+            </div> -->
+            <div style="flex:50%; padding:2px;"> 
+                <lightning-button class="slds-m-around_medium" label={recipebutton} variant="brand" onclick={onclickhandler}></lightning-button>
+            </div>
+        </div> 
+    </lightning-card>
+    <template if:true={recipetemplate}>
+        <lightning-card>
+        <lightning-layout>
+            <lightning-layout-item multiple-rows>
+            <div style="display:flex; align-items:left; justify-content:left;">
+                <div style="padding-left:5px">
+                    <h5><b>Title of recipe:</b> {title} </h5>
+                    <lightning-formatted-rich-text value={summary}></lightning-formatted-rich-text>
+                    <h4><b>Ready is Minutes:</b> {readyInMinutes} </h4>
+                    <h4><b>Price per serving:</b> {pricePerServing} </h4>
+                </div>
+                <div style="width:100%; height:100%; padding:1px; margin:auto">
+                    <img src={image}>
+                </div>
+            </div>
+        </lightning-layout-item>
+        </lightning-layout>
+        </lightning-card>
+    </template>
+</template>
